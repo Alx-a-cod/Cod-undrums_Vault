@@ -11,10 +11,10 @@
             "id": "1a98555f73b511fa",
             "type": "leaf",
             "state": {
-              "type": "empty",
+              "type": "graph",
               "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -49,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:obsidian",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -70,7 +70,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -90,7 +91,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Welcome.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +100,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Welcome"
+              "title": "Backlinks"
             }
           },
           {
@@ -173,11 +173,27 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "fit:Fit Sync": false,
+      "github-sync:Sync with Remote": false
     }
   },
   "active": "1a98555f73b511fa",
   "lastOpenFiles": [
+    "Liste.md",
+    "Obsidian Tips/How to use Obsidian.md",
+    "Obsidian Tips/Formattazione.md",
+    "Markup.md",
+    "Obsidian Tips/Titoli.md",
+    "Obsidian Tips/Callout.md",
+    "README.md",
+    "Legenda - Markdown + obsidian specific functionality/Untitled",
+    "2-Algorithms/Sorting.md",
+    "Bubble Sort.md",
+    "Obsidian Tips",
+    "Untitled.canvas",
+    "0 - Problems/Unfortunately, I have many..md",
+    "2-Algorithms",
     "Welcome.md"
   ]
 }

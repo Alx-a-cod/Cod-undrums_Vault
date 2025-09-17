@@ -1,1 +1,6 @@
-{}
+{
+  "cssTheme": "Primary",
+  "interfaceFontFamily": "",
+  "textFontFamily": "Garamond",
+  "baseFontSize": 20
+}
