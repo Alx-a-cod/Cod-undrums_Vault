@@ -1,0 +1,37 @@
+# ======================================
+# Obsidian Vault: Public Repo Ignore
+# ======================================
+
+# Obsidian system files (local settings, workspace, plugins)
+.obsidian/
+
+# Local plugin installs (if any)
+node_modules/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Temporary / backup files
+*.bak
+*.tmp
+*.swp
+*.swo
+
+# Log files
+*.log
+
+# Optional editor files (VS Code, Sublime, etc.)
+*.code-workspace
+*.sublime-workspace
+*.sublime-project
+
+# Optional: Python cache if you embed code testing
+__pycache__/
+*.pyc
+
+# Optional: other language-specific temp files
+*.class
+*.o
+*.exe
+*.out
