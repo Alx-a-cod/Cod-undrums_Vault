@@ -171,13 +171,4 @@ Evidenziato per concetti da ricordare subito.
 
 Callout e citazioni per note importanti o avvisi.
 
-lua
-Copia codice
-
-Con questa nota:
-
-- Puoi **collegare [[Titoli]], [[Liste]], [[Markup]]** come concetti correlati.  
-- Diventa un nodo nel Graph View molto chiaro e utile.  
-- Include esempi pratici Markdown e C#.  
-
 ---

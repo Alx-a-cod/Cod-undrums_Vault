@@ -2,5 +2,8 @@
   "cssTheme": "Primary",
   "interfaceFontFamily": "",
   "textFontFamily": "Garamond",
-  "baseFontSize": 20
+  "baseFontSize": 15,
+  "enabledCssSnippets": [
+    "wide-code"
+  ]
 }

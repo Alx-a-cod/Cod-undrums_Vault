@@ -11,10 +11,14 @@
             "id": "1a98555f73b511fa",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "1- Snippets/DoSQL - Soluzione retQ.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "DoSQL - Soluzione retQ"
             }
           }
         ]
@@ -70,8 +74,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -162,7 +165,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -174,21 +177,22 @@
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
       "obsidian-git:Open Git source control": false,
-      "fit:Fit Sync": false,
-      "github-sync:Sync with Remote": false
+      "always-color-text:Always color text": false
     }
   },
-  "active": "54b8acba1cfd5fe1",
+  "active": "1a98555f73b511fa",
   "lastOpenFiles": [
-    "Liste.md",
-    "Obsidian Tips/How to use Obsidian.md",
-    "Obsidian Tips/Formattazione.md",
-    "Markup.md",
-    "Obsidian Tips/Titoli.md",
+    "2-Algorithms/Sorting.md",
     "Obsidian Tips/Callout.md",
+    "1- Snippets/DoSQL - Soluzione retQ.md",
+    "1- Snippets/DoSQL - Nodo Problema, retQ come indicatore di successo.md",
+    "Obsidian Tips/Formattazione.md",
+    "Obsidian Tips/Titoli.md",
+    "Markup.md",
+    "Obsidian Tips/How to use Obsidian.md",
+    "Liste.md",
     "README.md",
     "Legenda - Markdown + obsidian specific functionality/Untitled",
-    "2-Algorithms/Sorting.md",
     "Bubble Sort.md",
     "Obsidian Tips",
     "Untitled.canvas",
