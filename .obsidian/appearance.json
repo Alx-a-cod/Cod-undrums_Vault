@@ -4,6 +4,8 @@
   "textFontFamily": "Garamond",
   "baseFontSize": 15,
   "enabledCssSnippets": [
-    "wide-code"
-  ]
+    "wide-code",
+    "hide-tags"
+  ],
+  "baseFontSizeAction": true
 }

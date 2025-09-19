@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "96197c1422d5ed92",
+        "id": "4125bad734bc3ba1",
         "type": "tabs",
         "children": [
           {
-            "id": "1a98555f73b511fa",
+            "id": "ffc467fe8eda842c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1- Snippets/DoSQL - Soluzione retQ.md",
+                "file": "1- Snippets/DoSQL - Nodo Problema, retQ come indicatore di successo.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DoSQL - Soluzione retQ"
+              "title": "DoSQL - Nodo Problema, retQ come indicatore di successo"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:obsidian",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -94,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "1- Snippets/DoSQL - Nodo Problema, retQ come indicatore di successo.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for DoSQL - Nodo Problema, retQ come indicatore di successo"
             }
           },
           {
@@ -112,27 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Welcome.md",
+                "file": "Obsidian Tips/How to use Obsidian.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Welcome"
-            }
-          },
-          {
-            "id": "32df1b0452478f80",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-tags",
-              "title": "Tags"
+              "title": "Outgoing links from How to use Obsidian"
             }
           },
           {
@@ -141,13 +127,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Welcome.md",
+                "file": "Obsidian Tips/How to use Obsidian.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Welcome"
+              "title": "Outline of How to use Obsidian"
             }
           },
           {
@@ -159,13 +145,42 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "7107ed66c1305f18",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "1b8e4a9958412590",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 278
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -180,23 +195,23 @@
       "always-color-text:Always color text": false
     }
   },
-  "active": "1a98555f73b511fa",
+  "active": "e0cd7b6228b374b6",
   "lastOpenFiles": [
-    "2-Algorithms/Sorting.md",
+    "Obsidian Tips/How to use Obsidian.md",
+    "Obsidian Tips/Formattazione.md",
     "Obsidian Tips/Callout.md",
     "1- Snippets/DoSQL - Soluzione retQ.md",
     "1- Snippets/DoSQL - Nodo Problema, retQ come indicatore di successo.md",
-    "Obsidian Tips/Formattazione.md",
+    "0 - Problems/Unfortunately, I have many..md",
+    "2-Algorithms/Sorting.md",
     "Obsidian Tips/Titoli.md",
     "Markup.md",
-    "Obsidian Tips/How to use Obsidian.md",
     "Liste.md",
     "README.md",
     "Legenda - Markdown + obsidian specific functionality/Untitled",
     "Bubble Sort.md",
     "Obsidian Tips",
     "Untitled.canvas",
-    "0 - Problems/Unfortunately, I have many..md",
     "2-Algorithms",
     "Welcome.md"
   ]

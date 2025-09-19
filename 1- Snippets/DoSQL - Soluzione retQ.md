@@ -1,6 +1,14 @@
+---
+tags:
+  - SQL
+  - Debugging
+---
+
 ## Idea chiave
-Non usare `retQ` per determinare il successo.  
-Esegui commit **solo se tutte le query terminano senza eccezioni**.
+
+- Non usare `retQ` per determinare il successo.  
+
+- Esegui commit **solo se tutte le query terminano senza eccezioni**.
 
 ```csharp
 public static int DoSQL(List<string> queriesSQL)

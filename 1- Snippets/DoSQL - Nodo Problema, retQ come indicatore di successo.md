@@ -3,10 +3,7 @@ tags:
   - SQL
   - Debugging
 ---
-
 ---
-
-
 #### Descrizione
 Il metodo `DoSQL` usa `retQ` (somma di `ExecuteNonQuery()`) come <span style="color: #2d98da">contatore di query riuscite.</span>
 
