@@ -21,6 +21,8 @@ Evidenzia concetti chiave o titoli minori all’interno del testo.
 Utile per richiamare l’attenzione.
 ```
 
+- **Aspetto grafico:** **Questo è importante, non puoi ignorarlo!**
+
 ## 2️⃣ Corsivo
 ```markdown
 
@@ -31,15 +33,19 @@ Può essere combinato con il grassetto: ***grassetto e corsivo***.
 
 ```
 
+- **Aspetto grafico:** *elegante, non troppo invadente.*
+
 ## 3️⃣ Barrato
 ```markdown
 
-~~testo barrato~~
+~~testo barrato~~ <-- doppia tilde num: alt + 0126 
 Indica concetti superati o non più validi.
 
 Utile nelle note in progressione o revisioni.
 
 ```
+
+- **Aspetto grafico:** ~~oopsie, questo non dovevo esserci~~
 
 ## 4️⃣ Evidenziato
 ``` markdown
@@ -51,6 +57,8 @@ Può essere combinato con grassetto o corsivo.
 
 ```
 
+- **Aspetto grafico:** ==Hey, LISTEN!==
+
 ## 5️⃣ Blocchi di citazione
 ```markdown
 
@@ -61,10 +69,14 @@ Spesso usato con callout per maggiore visibilità.
 
 ```
 
+- **Aspetto grafico:**
+> come disse un famosissimo saggio...
+
 ## 6️⃣ Callout
 
 **Tipi di callout:** note, tip, warning, important, bug.
             Possono contenere anche codice o immagini.        
+            
 ##### Callout "note"
 ```markdown
 
@@ -73,8 +85,12 @@ Spesso usato con callout per maggiore visibilità.
 > > Puoi aggiungere **testo in grassetto**, *corsivo* o ==evidenziato==.
 
 ```
+
+- **Aspetto grafico:** 
+> [!note] Nota:
+> Obsidian non ama gli spazi nei nomi dei file. Come i gatti, preferisce le cose compatte.
 - **Icona:** 📝
-- **Uso:** informazioni generali, appunti importanti ma neutri.
+- **Uso:** informazioni aggiuntive, chiarimenti, dettagli secondari.
 
 ##### Callout "tip"
 
@@ -88,18 +104,33 @@ Spesso usato con callout per maggiore visibilità.
 > Console.WriteLine("Tip: usa sempre il debugger!");
 
 ```
+
+- **Aspetto grafico:** 
+> [!tip] Lo sapevi?
+> Usa `Ctrl + P` per cercare tutto. Anche la tua pazienza.
 - **Icona:** 💡
-- **Uso:** consigli pratici o *“best practice”*.
+- **Uso:** suggerimenti utili, scorciatoie, best practice.
 
 ##### Callout "warning"
 
 ```markdown
 
-`> [!warning] Attenzione > Questo è un avviso o pericolo da non ignorare. > Puoi aggiungere anche un’immagine: > ![Immagine warning](./immagini/alert.png)`
+> [!warning] Attenzione 
+> Questo è un avviso o pericolo da non ignorare. 
+> Puoi aggiungere anche un’immagine: 
+> ![Immagine warning](./immagini/alert.png)`
 
 ```
+
+- **Aspetto grafico:** 
+> [!warning] Attenzione!
+>Non è un dramma, ma quasi. Procedi con cautela, o con un backup.
+> ```bash
+> rm -rf /  
+> // ...e così finì la leggenda del tuo disco rigido.
+> ```
 - **Icona:** ⚠️
-- **Uso:** warning, rischi, errori comuni.
+- **Uso:** rischi, comportamenti pericolosi, cose che potrebbero andare storte e che probabilmente lo faranno.
 
 ##### Callout “important”
 
@@ -111,21 +142,36 @@ Spesso usato con callout per maggiore visibilità.
 
 ```
 
+- **Aspetto grafico:** 
+  > [!important] Importante
+  > Se leggi solo una cosa oggi, che sia questa. Il resto è contorno.
+  > ```markdown
+  > // I file `.md` sono il cuore pulsante di Obsidian. Non toccarli con editor strani.
+  > ```
 - **Icona:** ❗
-- **Uso:** informazioni cruciali o da ricordare assolutamente.
+- **Uso:** - concetti fondamentali, avvisi critici, cose da ricordare sempre.
+- 
 ##### Callout “bug”
-
+```markup
 > [!bug] Bug
 > Segnala un errore, problema o comportamento strano nel codice.
 > Esempio:
 > ```csharp
 > // BUG: questo metodo lancia eccezioni quando l'array è vuoto
 > ```
+```
 
+- **Aspetto grafico:** 
+> [!bug] Bug
+>Il codice è lì, ti fissa, e tu non capisci perché non funziona.
+> ```js
+> const user = null;
+> console.log(user.name); // TypeError: Cannot read property 'name' of null
+> ```
 - **Icona:** 🐛
 - **Uso:** errori, problemi noti o comportamenti inattesi.
 
-###### ✅ Note pratiche sui callout
+###### ==✅ Note pratiche sui callout==
 - Possono contenere **tutti gli elementi Markdown**: liste, codice, link, immagini, grassetto, corsivo.
 - Si possono nidificare all’interno di note più grandi.
 - Mantieni **un solo tipo per callout**, così è chiaro visivamente nel Graph View e nell’editing.
@@ -133,13 +179,12 @@ Spesso usato con callout per maggiore visibilità.
 ## 7️⃣ Blocchi di codice
 
 #### Inline
-```markdown
+```markdown / bash / js / py / csharp / c / chi più ne ha più ne metta
 Usa `Console.WriteLine()` per stampare.
 ```
 
 #### Multi-linea
 csharp
-Copia codice
 Console.WriteLine("Hello World");
 Supporta syntax highlighting per diversi linguaggi (C#, Python, JS, ecc.).
 
@@ -148,10 +193,10 @@ Utile per esempi pratici o snippet da ricordare.
 8️⃣ Tabelle
 markdown
 Copia codice
-| Concetto     | Esempio          |
-|--------------|----------------|
-| Grassetto    | **testo**      |
-| Corsivo      | *testo*        |
+| Concetto      | Esempio          |
+|--------------    |----------------|
+| Grassetto     | **testo**      |
+| Corsivo         | *testo*        |
 | Evidenziato  | ==testo==      |
 Permette di comparare formati o dati strutturati.
 

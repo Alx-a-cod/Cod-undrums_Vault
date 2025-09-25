@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1- Snippets/DoSQL - Nodo Problema, retQ come indicatore di successo.md",
+                "file": "0 - Problems/WIP_MetodoDelegati(ignore).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DoSQL - Nodo Problema, retQ come indicatore di successo"
+              "title": "WIP_MetodoDelegati(ignore)"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1- Snippets/DoSQL - Nodo Problema, retQ come indicatore di successo.md",
+                "file": "0 - Problems/Unfortunately, I have many..md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for DoSQL - Nodo Problema, retQ come indicatore di successo"
+              "title": "Backlinks for Unfortunately, I have many."
             }
           },
           {
@@ -184,6 +184,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "export-graph-view:Export graph view": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -197,12 +198,12 @@
   },
   "active": "e0cd7b6228b374b6",
   "lastOpenFiles": [
-    "Obsidian Tips/How to use Obsidian.md",
-    "Obsidian Tips/Formattazione.md",
-    "Obsidian Tips/Callout.md",
     "1- Snippets/DoSQL - Soluzione retQ.md",
     "1- Snippets/DoSQL - Nodo Problema, retQ come indicatore di successo.md",
-    "0 - Problems/Unfortunately, I have many..md",
+    "Obsidian Tips/Formattazione.md",
+    "0 - Problems/WIP_MetodoDelegati(ignore).md",
+    "Obsidian Tips/How to use Obsidian.md",
+    "Obsidian Tips/Callout.md",
     "2-Algorithms/Sorting.md",
     "Obsidian Tips/Titoli.md",
     "Markup.md",

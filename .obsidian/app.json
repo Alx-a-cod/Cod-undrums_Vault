@@ -1,5 +1,12 @@
 {
   "alwaysUpdateLinks": true,
   "readableLineLength": false,
-  "propertiesInDocument": "visible"
+  "propertiesInDocument": "visible",
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "A3",
+    "landscape": false,
+    "margin": "1",
+    "downscalePercent": 100
+  }
 }
