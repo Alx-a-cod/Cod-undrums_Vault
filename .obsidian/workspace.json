@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "0 - Problems/WIP_MetodoDelegati(ignore).md",
+                "file": "1- Snippets/GithHub Submodules Sync - Soluzione.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "WIP_MetodoDelegati(ignore)"
+              "title": "GithHub Submodules Sync - Soluzione"
             }
           }
         ]
@@ -196,19 +196,21 @@
       "always-color-text:Always color text": false
     }
   },
-  "active": "e0cd7b6228b374b6",
+  "active": "ffc467fe8eda842c",
   "lastOpenFiles": [
-    "1- Snippets/DoSQL - Soluzione retQ.md",
-    "1- Snippets/DoSQL - Nodo Problema, retQ come indicatore di successo.md",
+    "1- Snippets/GitHub Submodules Sync - Error.md",
+    "1- Snippets/GithHub Submodules Sync - Soluzione.md",
+    "README.md",
     "Obsidian Tips/Formattazione.md",
-    "0 - Problems/WIP_MetodoDelegati(ignore).md",
+    "1- Snippets/DoSQL - Nodo Problema, retQ come indicatore di successo.md",
     "Obsidian Tips/How to use Obsidian.md",
     "Obsidian Tips/Callout.md",
     "2-Algorithms/Sorting.md",
+    "0 - Problems/WIP_MetodoDelegati(ignore).md",
+    "1- Snippets/DoSQL - Soluzione retQ.md",
     "Obsidian Tips/Titoli.md",
     "Markup.md",
     "Liste.md",
-    "README.md",
     "Legenda - Markdown + obsidian specific functionality/Untitled",
     "Bubble Sort.md",
     "Obsidian Tips",
