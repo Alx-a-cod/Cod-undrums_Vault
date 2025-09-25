@@ -4,13 +4,13 @@ Welcome! This is my **personal coding lab in Markdown form** — a space where p
 
 ## What You’ll Find Here
 
-- **📝 Problems & Solutions**  
+- **📍 Problems & Solutions**  
   Organized by topics such as `arrays`, `graphs`, `dynamic programming`, and more. Each entry includes the problem description, my thought process, and the final code solution.  
 
-- **💡 Snippets & Tricks**  
+- **📍 Snippets & Tricks**  
   Handy reusable functions, regex patterns, clever one-liners, and other coding shortcuts I’ve collected along the way. Perfect for those “I know I’ve solved this before” moments.  
 
-- **🌌 Interactive Vault Experience**  
+- **📍 Interactive Vault Experience**  
   Open this in Obsidian to explore the **graph view** — watch notes connect, expand, and occasionally plot world domination.   
 
 ## How to Navigate
