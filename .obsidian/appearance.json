@@ -2,7 +2,7 @@
   "cssTheme": "Primary",
   "interfaceFontFamily": "",
   "textFontFamily": "Garamond",
-  "baseFontSize": 12,
+  "baseFontSize": 13,
   "enabledCssSnippets": [
     "wide-code",
     "hide-tags"

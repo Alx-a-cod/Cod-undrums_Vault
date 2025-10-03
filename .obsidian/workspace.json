@@ -8,49 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "ffc467fe8eda842c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1- Snippets/GithHub Submodules Sync - Soluzione.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "GithHub Submodules Sync - Soluzione"
-            }
-          },
-          {
-            "id": "8b149f6f71d62f61",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "README"
-            }
-          },
-          {
             "id": "52ad3ab9e979e1e8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "2- .NET and advanced .NET/0 - Linguaggio Csharp.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "0 - Linguaggio Csharp"
+            }
+          },
+          {
+            "id": "94ce1f1cd2513d0c",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -107,7 +89,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 284
   },
   "right": {
     "id": "8dd3b14ba63ab0c4",
@@ -123,7 +105,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "0 - Problems/Unfortunately, I have many..md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +114,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Unfortunately, I have many."
+              "title": "Backlinks"
             }
           },
           {
@@ -156,13 +137,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Obsidian Tips/How to use Obsidian.md",
+                "file": "2- .NET and advanced .NET/0 - Linguaggio Csharp.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of How to use Obsidian"
+              "title": "Outline of 0 - Linguaggio Csharp"
             }
           },
           {
@@ -209,7 +190,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 278
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -225,27 +206,43 @@
       "always-color-text:Always color text": false
     }
   },
-  "active": "52ad3ab9e979e1e8",
+  "active": "94ce1f1cd2513d0c",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
-    "README.md",
-    "1- Snippets/GithHub Submodules Sync - Soluzione.md",
-    "1- Snippets/GitHub Submodules Sync - Error.md",
-    "Obsidian Tips/Formattazione.md",
+    "2- .NET and advanced .NET/1.d Astrazione.md",
+    "2- .NET and advanced .NET/1.e Modificatori di accesso in Csharp.md",
+    "2- .NET and advanced .NET/1.f Heap, Stack e Value vs Reference Type in C.md",
+    "2- .NET and advanced .NET/1.g Tipi Valore vs Tipi Riferimento.md",
+    "2- .NET and advanced .NET/02 - Tipi di Architetture in NET.md",
+    "2- .NET and advanced .NET/0 - Linguaggio Csharp.md",
+    "2- .NET and advanced .NET/00 - Index.md",
     "1- Snippets/DoSQL - Nodo Problema, retQ come indicatore di successo.md",
+    "2- .NET and advanced .NET/02 - Framework di sviluppo.md",
+    "2- .NET and advanced .NET/01 - Programmazione orientata agli oggetti (OOP).md",
+    "2- .NET and advanced .NET/1.c Polimorfismo.md",
+    "2- .NET and advanced .NET/1.b Ereditarietà.md",
+    "2- .NET and advanced .NET/1.a Incapsulamento (Encapsulation).md",
+    "toc.md",
+    "Polimorfismo.md",
+    "Incapsulamento.md",
+    "polimorfismo.md",
+    "Obsidian Tips/Formattazione.md",
+    "2- .NET and advanced .NET",
+    "Pasted image 20250928150018.png.md",
+    "Machine Learning/Lesson 1. Introduction to Supervised Learning.md",
+    "Pasted image 20250928150018.png",
+    "Pasted image 20250928145854.png",
     "Obsidian Tips/How to use Obsidian.md",
     "Obsidian Tips/Callout.md",
-    "2-Algorithms/Sorting.md",
-    "0 - Problems/WIP_MetodoDelegati(ignore).md",
-    "1- Snippets/DoSQL - Soluzione retQ.md",
-    "Obsidian Tips/Titoli.md",
-    "Markup.md",
-    "Liste.md",
-    "Legenda - Markdown + obsidian specific functionality/Untitled",
-    "Bubble Sort.md",
-    "Obsidian Tips",
+    "README.md",
     "Untitled.canvas",
-    "2-Algorithms",
-    "Welcome.md"
+    "Untitled 1.canvas",
+    "1- Snippets/GithHub Submodules Sync - Soluzione.md",
+    "Machine Learning/Untitled.canvas",
+    "Machine Learning",
+    "conflict-files-obsidian-git.md",
+    "1- Snippets/GitHub Submodules Sync - Error.md",
+    "Legenda - Markdown + obsidian specific functionality/Untitled",
+    "Obsidian Tips",
+    "2-Algorithms"
   ]
 }
