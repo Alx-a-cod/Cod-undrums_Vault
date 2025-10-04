@@ -28,7 +28,7 @@
 
 ---
 
-## Domande tipiche da colloquio
+## Domande:
 1. **Cos’è il Domain Driven Design e perché è utile?**
 2. **Qual è la differenza tra Entity e Value Object?**
 3. **Puoi spiegare cos’è un Aggregate e perché si usa un Aggregate Root?**
