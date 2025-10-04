@@ -25,10 +25,14 @@
             "id": "94ce1f1cd2513d0c",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "2- .NET and advanced .NET/07 - DDD, Domain Driven Design.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "07 - DDD, Domain Driven Design"
             }
           }
         ],
@@ -190,7 +194,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 354
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -208,19 +212,25 @@
   },
   "active": "94ce1f1cd2513d0c",
   "lastOpenFiles": [
-    "2- .NET and advanced .NET/1.d Astrazione.md",
     "2- .NET and advanced .NET/1.e Modificatori di accesso in Csharp.md",
-    "2- .NET and advanced .NET/1.f Heap, Stack e Value vs Reference Type in C.md",
-    "2- .NET and advanced .NET/1.g Tipi Valore vs Tipi Riferimento.md",
-    "2- .NET and advanced .NET/02 - Tipi di Architetture in NET.md",
+    "2- .NET and advanced .NET/06 - Containerizzazione (Docker & Kubernetes).md",
     "2- .NET and advanced .NET/0 - Linguaggio Csharp.md",
-    "2- .NET and advanced .NET/00 - Index.md",
-    "1- Snippets/DoSQL - Nodo Problema, retQ come indicatore di successo.md",
-    "2- .NET and advanced .NET/02 - Framework di sviluppo.md",
+    "2- .NET and advanced .NET/07 - DDD, Domain Driven Design.md",
     "2- .NET and advanced .NET/01 - Programmazione orientata agli oggetti (OOP).md",
+    "2- .NET and advanced .NET/02 - Tipi di Architetture in NET.md",
+    "2- .NET and advanced .NET/1.g Tipi Valore vs Tipi Riferimento.md",
+    "2- .NET and advanced .NET/1.f Heap, Stack e Value vs Reference Type in C.md",
+    "2- .NET and advanced .NET/1.d Astrazione.md",
     "2- .NET and advanced .NET/1.c Polimorfismo.md",
     "2- .NET and advanced .NET/1.b Ereditarietà.md",
     "2- .NET and advanced .NET/1.a Incapsulamento (Encapsulation).md",
+    "2- .NET and advanced .NET/Azure DP900 - Azure Data Fundamentals.md",
+    "2- .NET and advanced .NET/05 - EF Core.md",
+    "2- .NET and advanced .NET/04 - LinQ.md",
+    "2- .NET and advanced .NET/03 - SQL & Database.md",
+    "2- .NET and advanced .NET/00 - Index.md",
+    "1- Snippets/DoSQL - Nodo Problema, retQ come indicatore di successo.md",
+    "2- .NET and advanced .NET/02 - Framework di sviluppo.md",
     "toc.md",
     "Polimorfismo.md",
     "Incapsulamento.md",
@@ -231,16 +241,10 @@
     "Machine Learning/Lesson 1. Introduction to Supervised Learning.md",
     "Pasted image 20250928150018.png",
     "Pasted image 20250928145854.png",
-    "Obsidian Tips/How to use Obsidian.md",
-    "Obsidian Tips/Callout.md",
-    "README.md",
     "Untitled.canvas",
     "Untitled 1.canvas",
-    "1- Snippets/GithHub Submodules Sync - Soluzione.md",
     "Machine Learning/Untitled.canvas",
     "Machine Learning",
-    "conflict-files-obsidian-git.md",
-    "1- Snippets/GitHub Submodules Sync - Error.md",
     "Legenda - Markdown + obsidian specific functionality/Untitled",
     "Obsidian Tips",
     "2-Algorithms"

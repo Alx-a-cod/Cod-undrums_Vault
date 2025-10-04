@@ -145,7 +145,7 @@ class Program
 ```
 #### 2. Distruttore
 Il distruttore è un **metodo speciale** che viene chiamato quando l’**oggetto viene distrutto dal Garbage Collector** (GC).
-Serve a<span style="color: #8392a4">rilasciare risorse non gestite</span> (es. file, connessioni, handle di sistema).
+Serve a <span style="color: #8392a4">rilasciare risorse non gestite</span> (es. file, connessioni, handle di sistema).
 ##### 2.a Caratteristiche
 
 - Ha lo ==stesso nome della classe preceduto da ~.==
@@ -319,7 +319,7 @@ per linguaggio invece vale:
 |**Java**|solo classi|(non esistono struct, ma si usano classi leggere o `record`)|
 
 ---
-### In sintesi:  
+#### In sintesi:  
 - Una **classe** è un **reference type**, supporta ereditarietà e viene gestita sull’heap.    
 - Una **struct** è un **value type**, più leggera, senza ereditarietà, adatta a piccoli contenitori di dati.
     
@@ -1811,7 +1811,6 @@ Qui il metodo corretto viene scelto in base al tipo effettivo (Cane) a runtime.
     2. Il server risponde con una **risposta HTTP**.
         
 - È **stateless**, cioè ogni richiesta è indipendente dalle altre.
-    
 
 ---
 
@@ -1896,7 +1895,77 @@ Content-Type: application/json
 > - **Metodi HTTP** definiscono l’azione: GET, POST, PUT, PATCH, DELETE.
 > - In .NET si interagisce con HTTP tramite **HttpClient**, Web API, MVC controller.
 
+### <span style="color: #20bf6b">Evoluzione del protocollo HTTP</span>
+---
 
+#### HTTP/1.1 (1997 – ancora molto usato)
+
+- **Connessioni persistenti (Keep-Alive)** → più richieste possono viaggiare sulla stessa connessione TCP (prima, con HTTP/1.0, ogni richiesta apriva una connessione nuova).
+- **Pipelining** → possibilità di inviare più richieste senza aspettare la risposta. In teoria utile, ma mai adottato bene per problemi di compatibilità.
+- **Chunked transfer encoding** → permette lo **streaming** di contenuti dinamici.
+- **Nuovi metodi HTTP** → introdotti `PUT`, `DELETE`, `OPTIONS`.
+- **Caching e header** migliorati rispetto a HTTP/1.0.
+- **Limite principale**:
+    
+    - le risorse sono servite in sequenza → se una è lenta, blocca le altre (**Head of Line Blocking**).
+    - i browser hanno aggirato il problema aprendo più connessioni TCP in parallelo (overhead elevato).
+        
+
+👉 Ancora oggi è il **fallback** se HTTP/2 o 3 non sono supportati.
+
+---
+
+#### HTTP/2 (2015 – standard moderno, diffusissimo)
+
+- Mantiene **stessi metodi, status code, header** → semantica invariata.
+- Cambia il **trasporto**:
+
+    - **Un’unica connessione TCP** per più richieste.
+    - **Multiplexing** → più richieste/risposte viaggiano in parallelo senza blocchi.
+    
+- **Header compression (HPACK)** → meno overhead, più velocità.
+- **Server Push** → il server può inviare al client risorse **prima che le chieda** (es. CSS, JS).
+- Usato quasi sempre con **HTTPS + TLS**.
+- Molto più efficiente su reti moderne.
+
+👉 Standard **di fatto oggi**, soprattutto con browser moderni e API.
+
+---
+
+#### HTTP/3 (2022 – in adozione crescente)
+
+- Stessa logica di HTTP/2 (stessi metodi e concetti), ma cambia **protocollo di trasporto**.
+    
+- Basato su **QUIC** (Quick UDP Internet Connections), un protocollo su **UDP**.
+- Vantaggi:
+    
+    - **Elimina il problema dell’Head of Line Blocking a livello TCP**.
+    - **Connessioni più veloci**: handshake ridotto a 1-RTT (round trip time).
+    - **Migliore resilienza** → non perde la connessione se cambia IP (utile su mobile, es. passaggio Wi-Fi → 4G).
+    - **Perfetto per reti mobili e instabili**.
+        
+- Supportato da **Chrome, Firefox, Edge, Cloudflare, Google**.
+    
+👉 Ancora in crescita, ma sarà lo standard per streaming, app real-time e API performanti.
+
+#### Tabella comparativa
+
+| Caratteristica      | HTTP/1.1                | HTTP/2                      | HTTP/3 (QUIC)           |
+| ------------------- | ----------------------- | --------------------------- | ----------------------- |
+| Anno                | 1997                    | 2015                        | 2022                    |
+| Connessione         | Multipli TCP            | Singolo TCP                 | Singolo UDP (QUIC)      |
+| Parallelismo        | Limitato (Head-of-Line) | Multiplexing                | Multiplexing senza HOL  |
+| Compressione Header | No                      | HPACK                       | QPACK                   |
+| Server Push         | No                      | Sì                          | Sì                      |
+| Sicurezza           | HTTPS opzionale         | HTTPS (praticamente sempre) | HTTPS integrato in QUIC |
+| Performance         | Medio-basse             | Alte                        | Altissime, resilienti   |
+| Supporto            | Universale              | Ampio (default browser/API) | In crescita rapida      |
+
+### Sintesi:
+
+> - **HTTP/1.1** → ancora diffuso, introduce Keep-Alive, chunked transfer, ma soffre di head-of-line blocking.
+> - **HTTP/2** → migliora con multiplexing, header compression e server push; usato quasi sempre con TLS.
+> - **HTTP/3** → basato su QUIC/UDP, elimina i limiti del TCP, è più veloce e stabile su reti moderne (perfetto per mobile e real-time).
 ## SOAP vs API vs REST
 
 --- 
@@ -1993,3 +2062,194 @@ Accept: application/json
 > - **SOAP** = protocollo standard con XML, più pesante, usato in contesti enterprise.
 > - **REST** = stile architetturale leggero, stateless, usa JSON e HTTP.
 > - **API** = interfaccia tra applicazioni, può essere SOAP o REST.
+
+
+# Virtual, Override e New in Csharp
+
+### `virtual`
+
+- Serve a **marcare un metodo** in una classe base come **sovrascrivibile**.
+- Definisce un **punto di estensione**.
+- Per default i metodi **non sono virtuali** in C#.
+
+```csharp
+class BaseClass
+{
+    public virtual void Saluta()
+    {
+        Console.WriteLine("Ciao dalla BaseClass");
+    }
+}
+```
+
+---
+
+### `override`
+
+- Permette a una **classe derivata** di ridefinire un metodo `virtual` (o `abstract`) della base.
+- È un vero **polimorfismo**: la scelta del metodo avviene a **runtime** (binding dinamico).
+
+```csharp
+class Derivata : BaseClass
+{
+    public override void Saluta()
+    {
+        Console.WriteLine("Ciao dalla Derivata");
+    }
+}
+
+BaseClass obj = new Derivata();
+obj.Saluta(); // Output: "Ciao dalla Derivata"
+```
+
+👉 Anche se `obj` è di tipo `BaseClass`, viene eseguito il metodo di `Derivata`.
+
+---
+
+### `new`
+
+- Serve a **nascondere** un metodo della classe base con la stessa firma.
+    
+- Non è polimorfismo: si chiama **method hiding**.
+- La scelta del metodo dipende dal **tipo della variabile di riferimento**, non dall’oggetto reale.
+    
+
+
+```csharp
+class DerivataNew : BaseClass
+{
+    public new void Saluta()
+    {
+        Console.WriteLine("Ciao dalla DerivataNew");
+    }
+}
+
+BaseClass obj1 = new DerivataNew();
+obj1.Saluta(); // Output: "Ciao dalla BaseClass"
+
+DerivataNew obj2 = new DerivataNew();
+obj2.Saluta(); // Output: "Ciao dalla DerivataNew"
+```
+
+👉 Se usi un riferimento di tipo base → esegue il metodo base.  
+👉 Se usi un riferimento di tipo derivato → esegue il metodo derivato.
+
+---
+
+### Differenze chiave
+
+|Parola chiave|Tipo di meccanismo|Risoluzione|Polimorfismo?|Caso d’uso|
+|---|---|---|---|---|
+|`virtual`|Abilitazione override|Runtime (dynamic)|✅ Sì|Estendere logica in sottoclassi|
+|`override`|Ridefinizione metodo|Runtime (dynamic)|✅ Sì|Sovrascrivere comportamento base|
+|`new`|Method Hiding|Compile-time (static)|❌ No|Nascondere metodo base senza polimorfismo|
+
+---
+
+### Sintesi
+
+> In C#, `virtual` + `override` implementano il vero polimorfismo a runtime (binding dinamico).  
+> `new` invece nasconde un metodo della base (method hiding), senza polimorfismo: il metodo chiamato dipende dal tipo del riferimento, non dall’oggetto reale.
+
+# Verbi HTTP principali
+
+## GET
+- Serve per **richiedere dati** da un server.
+- Non modifica lo stato del server → **idempotente e sicuro**.
+- Tipico utilizzo: visualizzare pagine, elenchi, dettagli.
+- Esempio in ASP.NET MVC:
+```csharp
+[HttpGet]
+  public ActionResult Dettaglio(int id) 
+  {
+      var cliente = db.Clienti.Find(id);
+      return View(cliente);
+  }
+```
+URL esempio: `/Clienti/Dettaglio/5`
+
+## POST
+- Serve per **inviare dati al server** per <span style="color: #8392a4">creare una risorsa</span> o <span style="color: #8392a4">elaborare informazioni</span>.
+- Non idempotente (==ripetere la richiesta può generare duplicati==).
+- Tipico utilizzo: form di registrazione, creazione record.
+
+Esempio:
+```csharp
+[HttpPost]
+public ActionResult Crea(Cliente cliente) 
+{
+    db.Clienti.Add(cliente);
+    db.SaveChanges();
+    return RedirectToAction("Index");
+}
+```
+
+## PUT
+
+- Serve per **aggiornare completamente una risorsa** sul server.
+- Idempotente (ripetere la richiesta produce lo stesso risultato).
+- Tipico in Web API o servizi REST.
+
+Esempio Web API:
+
+```csharp
+[HttpPut]
+public IActionResult Aggiorna(int id, Cliente cliente) {
+    db.Clienti.Update(cliente);
+    db.SaveChanges();
+    return NoContent();
+}
+```
+
+## DELETE
+- Serve per **cancellare** una risorsa sul server.
+- Idempotente.
+- Tipico in RESTful API.
+
+Esempio:
+
+```csharp
+[HttpDelete]
+public IActionResult Elimina(int id) {
+    var cliente = db.Clienti.Find(id);
+    db.Clienti.Remove(cliente);
+    db.SaveChanges();
+    return NoContent();
+}
+```
+
+## Sintesi
+
+**GET** → leggere dati (sicuro e idempotente)
+**POST** → creare dati (non idempotente)
+**PUT** → aggiornare dati (idempotente)
+**DELETE** → cancellare dati (idempotente)
+
+ `-->`  In ASP.NET MVC/Web API i verbi si mappano a metodi dei Controller tramite attributi [HttpGet], [HttpPost], [HttpPut], [HttpDelete].
+Questo è fondamentale per sviluppare API RESTful o gestire correttamente form e richieste HTTP.
+
+# Idempotenza HTTP
+
+## Definizione
+
+Un metodo HTTP è **idempotente** se **ripetere più volte la stessa richiesta produce lo stesso effetto sul server**, senza modificare ulteriormente lo stato dopo la prima esecuzione.
+
+- In altre parole: fare 1, 2 o 100 richieste identiche → lo stato finale del server resta invariato.
+
+---
+
+## Esempi pratici
+
+| Metodo | Idempotente? | Spiegazione |
+|--------|--------------|------------|
+| GET    | ✅ Sì        | Richiede dati, non modifica nulla. Ripetere GET non cambia lo stato del server. |
+| POST   | ❌ No        | Crea nuove risorse o dati. Ripetere POST può creare duplicati. |
+| PUT    | ✅ Sì        | Aggiorna una risorsa. Ripetere PUT con lo stesso contenuto mantiene lo stesso stato. |
+| DELETE | ✅ Sì        | Elimina una risorsa. Ripetere DELETE sulla stessa risorsa non cambia ulteriormente lo stato (la risorsa è già cancellata). |
+| PATCH  | ❌/✅ Dipende | Aggiorna parzialmente una risorsa; l’idempotenza dipende dall’implementazione. |
+
+---
+
+## Sintesi
+
+L’**idempotenza** è importante nelle API REST perché permette di gestire retry di richieste senza rischiare effetti collaterali indesiderati. GET, PUT e DELETE sono idempotenti; POST no.
