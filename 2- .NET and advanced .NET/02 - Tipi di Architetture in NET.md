@@ -255,3 +255,175 @@ Questo approccio aumenta la **modularità**, favorisce la **testabilità** e ren
 ### Sintesi: 
 
 >TempData serve a mantenere dati temporanei tra due richieste consecutive. Lo uso spesso per passare messaggi di stato o notifiche dopo un redirect. Diverso da ViewBag (solo per la stessa richiesta) e Session (persistente fino alla chiusura).
+
+
+# Architettura a Microservizi – Guida per Colloquio (livello .NET junior)
+
+---
+
+## Cos’è un microservizio
+Un **microservizio** è un **piccolo modulo indipendente** di un’applicazione che:
+- realizza **una singola funzionalità di business** (es. “Gestione Ordini”),
+- ha **database, logica e API proprie**,
+- comunica con gli altri servizi tramite **API REST** o **messaggistica** (es. RabbitMQ, Kafka),
+- può essere **sviluppato, distribuito e scalato indipendentemente**.
+
+In breve:
+> 👉 “Un microservizio è un’applicazione autonoma, piccola e focalizzata, che collabora con altre per formare un sistema completo.”
+
+---
+
+## Struttura tipica di un microservizio .NET
+
+Esempio: **Servizio Ordini**
+
+/OrderService
+├── OrderService.API/ → API REST (ASP.NET Core)
+│ ├── Controllers/
+│ ├── DTOs/
+│ ├── Program.cs
+│ └── appsettings.json
+├── OrderService.Core/ → Logica di dominio, entità, interfacce
+├── OrderService.Infrastructure/ → Accesso dati (EF Core, Dapper), repository
+├── OrderService.Tests/ → Unit test e integrazione
+
+
+Tecnologie comuni in .NET:
+- **ASP.NET Core** → API REST  
+- **Entity Framework Core / Dapper** → accesso dati  
+- **Serilog / Application Insights** → logging  
+- **MediatR / CQRS pattern** → separazione dei comandi e query  
+- **Docker** → containerizzazione  
+- **Kubernetes** → orchestrazione  
+- **API Gateway** (es. Ocelot o YARP) → punto d’ingresso unico
+
+---
+
+## Componenti principali dell’architettura
+
+| Componente | Descrizione |
+|-------------|-------------|
+| **Service** | Microservizio autonomo con logica di business specifica |
+| **Database per servizio** | Ogni microservizio ha il suo schema o database (no DB condiviso) |
+| **API Gateway** | Gestisce routing, autenticazione, bilanciamento (es. Ocelot, YARP) |
+| **Service Discovery** | Rilevamento automatico di endpoint (es. Consul, Eureka) |
+| **Message Broker** | Comunicazione asincrona tra servizi (RabbitMQ, Kafka, Azure Service Bus) |
+| **Container / orchestratore** | Docker + Kubernetes per eseguire e scalare i servizi |
+| **CI/CD pipeline** | Automazione build → test → deploy di ogni microservizio |
+
+---
+
+## Comunicazione tra microservizi
+
+### 1. Sincrona (REST API)
+
+Ogni servizio espone API HTTP:
+
+```http
+GET /api/clienti/1
+POST /api/ordini
+```
+
+> Facile da implementare, ma più fragile (se un servizio non risponde → fallback, retry).
+### 2. Asincrona (eventi / messaggi)
+
+- Usa **message broker** (es. RabbitMQ, Azure Service Bus, Kafka).
+- I servizi si inviano eventi (“OrdineCreato”) → disaccoppiamento totale.
+
+Migliora scalabilità e resilienza.
+##### Vantaggi dei microservizi
+✅ Scalabilità indipendente (es. scalare solo OrderService).
+✅ Deploy separati → meno impatti sugli altri moduli.
+✅ Allineamento ai team (team autonomi per servizio).
+✅ Tecnologie diverse possibili per ogni microservizio.
+✅ Maggiore resilienza (guasto di un servizio non ferma tutto).
+
+##### Svantaggi e complessità
+- Gestione distribuita → logging, tracing e debugging più complessi.
+- Sicurezza → autenticazione e autorizzazione per ogni servizio.
+- Dati duplicati → serve coerenza eventuale, non transazioni cross-service.
+- Deploy coordinato → serve CI/CD ben configurata.
+- Osservabilità → servono strumenti centralizzati (Elastic Stack, Prometheus, Grafana).
+
+#### Pattern architetturali usati
+
+|Pattern|Scopo|
+|---|---|
+|**API Gateway**|Centralizza accesso, sicurezza e routing|
+|**CQRS (Command Query Responsibility Segregation)**|Divide lettura/scrittura per performance|
+|**Event-driven**|Comunicazione tramite eventi per disaccoppiamento|
+|**Saga / Outbox**|Gestione di transazioni distribuite|
+|**Circuit Breaker / Retry**|Evita propagazione di errori tra servizi|
+|**Service Discovery**|Localizza dinamicamente gli endpoint dei servizi|
+
+#### Database per microservizio
+
+Ogni servizio gestisce i propri dati:
+
+- nessuna condivisione diretta di tabelle tra microservizi;
+- scambio solo via API o messaggi.
+
+Esempio:
+
+```bash 
+CustomerService → CustomersDb
+OrderService → OrdersDb
+```
+
+Per sincronizzare dati:
+
+- usare eventi (“CustomerUpdated”) o event sourcing oppure **cache condivise** (es. Redis).
+
+### Microservizi in Docker e Kubernetes
+
+Ogni microservizio viene:
+
+- **containerizzato** (Dockerfile)
+- pubblicato come **immagine**
+- **orchestrato** da Kubernetes tramite *Deployment* + *Service*.
+
+Esempio:
+
+```bash
+docker build -t order-service .
+docker run -p 8080:80 order-service
+```
+Poi:
+
+```bashCopia codice
+kubectl apply -f order-deployment.yaml
+```
+
+ Esempio pratico (workflow .NET)
+ 
+`-->` OrderService riceve **POST** /api/ordini
+`-->` **Valida** e *salva* nel ==proprio== database
+`-->` **Pubblica evento** OrdineCreato su **message bus**
+`-->` **EmailService ascolta l’evento** e invia email di conferma
+`-->` InventoryService **aggiorna** le quantità disponibili
+
+→ Servizi indipendenti, coordinati da eventi, con coerenza eventuale.
+
+💬 Domande tipiche in colloquio
+
+|Domanda|Risposta sintetica ideale|
+|---|---|
+|Cos’è un microservizio?|Piccola app autonoma che realizza una funzionalità e comunica con le altre via API o eventi.|
+|Differenza tra monolite e microservizi?|Nel monolite tutto è unito in un unico processo; nei microservizi le parti sono separate e indipendenti.|
+|Come comunicano tra loro?|Tramite API REST o messaggi asincroni.|
+|Cosa succede se un servizio non risponde?|Implemento retry, timeout o circuit breaker.|
+|Come gestisci la sicurezza?|JWT o OAuth2, API Gateway per autenticazione centralizzata.|
+|Ogni microservizio deve avere il suo DB?|Sì, per evitare coupling. Si usa sincronizzazione via eventi.|
+|Come si scala un microservizio?|Verticalmente (più risorse) o orizzontalmente (più repliche, es. in Kubernetes).|
+|Come gestisci log e tracing?|Logging centralizzato (Serilog + Elastic, Application Insights, OpenTelemetry).|
+
+#### Riassunto
+
+Un sistema a microservizi è come un insieme di API autonome, ciascuna:
+- indipendente nel deploy e nello sviluppo,
+- incapsulata nel proprio dominio,
+- orchestrata in modo automatizzato (Docker/Kubernetes),
+- monitorata e connessa tramite eventi.
+
+> Nel monolite hai un’app grande e unica. Nei microservizi hai tante piccole app che collaborano in rete.
+
