@@ -2253,3 +2253,190 @@ Un metodo HTTP è **idempotente** se **ripetere più volte la stessa richiesta p
 ## Sintesi
 
 L’**idempotenza** è importante nelle API REST perché permette di gestire retry di richieste senza rischiare effetti collaterali indesiderati. GET, PUT e DELETE sono idempotenti; POST no.
+
+# Principi SOLID – Guida per Colloquio .NET
+
+---
+## Introduzione
+
+I **principi SOLID** sono linee guida per scrivere **codice pulito, manutenibile e estensibile**.  
+Sono cinque regole fondamentali proposte da Robert C. Martin (“Uncle Bob”).
+
+**S.O.L.I.D.** =  
+- **S** → Single Responsibility Principle  
+- **O** → Open/Closed Principle  
+- **L** → Liskov Substitution Principle  
+- **I** → Interface Segregation Principle  
+- **D** → Dependency Inversion Principle
+
+---
+## Single Responsibility Principle (SRP)
+
+> “Una classe dovrebbe avere una sola ragione per cambiare.”
+
+Ogni classe o modulo deve avere **una singola responsabilità**, cioè un unico scopo o motivo di modifica.
+
+### ❌ Esempio sbagliato:
+```csharp
+public class OrderManager
+{
+    public void CreateOrder(Order order) { /* ... */ }
+    public void SendEmail(Order order) { /* ... */ } // fa troppo
+}
+```
+
+### ✅ Esempio corretto:
+
+```csharp
+public class OrderService {     public void CreateOrder(Order order) { /* logica ordine */ } }  public class EmailService {     public void SendEmail(Order order) { /* logica email */ } }
+```
+
+> SRP mi aiuta a mantenere il codice modulare e testabile. Se devo cambiare il modo in cui invio le email, non tocco la logica degli ordini.
+
+## Open/Closed Principle (OCP)
+
+> Le classi devono essere **aperte all’estensione** ma **chiuse alla modifica**.
+
+Il codice dovrebbe permettere di aggiungere nuove funzionalità senza modificare quello esistente.
+
+❌ Esempio sbagliato:
+```csharp
+public class PaymentProcessor
+{
+    public void Pay(string method)
+    {
+        if (method == "PayPal") { /* ... */ }
+        else if (method == "CreditCard") { /* ... */ }
+    }
+}
+```
+✅ Esempio corretto (uso di polimorfismo):
+```csharp
+Copia codice
+public interface IPayment
+{
+    void Pay();
+}
+
+public class PayPalPayment : IPayment
+{
+    public void Pay() { /* logica PayPal */ }
+}
+
+public class CreditCardPayment : IPayment
+{
+    public void Pay() { /* logica carta */ }
+}
+
+public class PaymentProcessor
+{
+    public void Process(IPayment payment) => payment.Pay();
+}
+```
+
+> Aggiungo un nuovo metodo di pagamento senza toccare PaymentProcessor, rispettando l’OCP.
+
+## Liskov Substitution Principle (LSP)
+
+> Le classi **derivate** devono poter essere **usate al posto delle classi base** <span style="color: #8392a4">senza alterare il comportamento corretto</span>.
+
+In pratica, ==una subclasse deve comportarsi come la superclasse, senza rompere le aspettative del codice chiamante==.
+
+❌ Esempio sbagliato:
+```csharp
+Copia codice
+public class Rectangle
+{
+    public virtual void SetWidth(double w) { Width = w; }
+    public virtual void SetHeight(double h) { Height = h; }
+}
+
+public class Square : Rectangle
+{
+    public override void SetWidth(double w)
+    {
+        Width = Height = w; // rompe la logica del rettangolo
+    }
+}
+```
+
+✅ Esempio corretto:
+
+Evita ereditarietà se rompe il comportamento; usa composizione o interfacce.
+
+> Una sottoclasse deve rispettare il contratto della classe base. Se non può, probabilmente la gerarchia è sbagliata.
+
+## Interface Segregation Principle (ISP)
+
+> È meglio avere **molte interfacce specifiche** che una generica troppo grande.
+
+Le classi non dovrebbero essere costrette a implementare metodi che non usano.
+
+❌ Esempio sbagliato:
+```csharp
+public interface IWorker
+{
+    void Work();
+    void Eat();
+}
+
+public class Robot : IWorker
+{
+    public void Work() { /* ok */ }
+    public void Eat() { throw new NotImplementedException(); } // inutile
+}
+```
+
+✅ Esempio corretto:
+```csharp
+Copia codice
+public interface IWorkable { void Work(); }
+public interface IEatable { void Eat(); }
+
+public class Human : IWorkable, IEatable { /* ... */ }
+public class Robot : IWorkable { /* ... */ }
+```
+
+> **Divido le interfacce per comportamento**, così i client implementano solo ciò che serve.
+
+## Dependency Inversion Principle (DIP)
+
+> <span style="color: #8392a4">Le classi devono dipendere da astrazioni</span>, non da implementazioni concrete.
+
+Favorisci l’uso di interfacce e l’**iniezione delle dipendenze** (Dependency Injection).
+
+❌ Esempio sbagliato:
+```csharp
+public class ReportService
+{
+    private SqlRepository _repo = new SqlRepository(); // dipendenza concreta
+}
+✅ Esempio corretto:
+csharp
+Copia codice
+public class ReportService
+{
+    private readonly IRepository _repo;
+    public ReportService(IRepository repo)
+    {
+        _repo = repo;
+    }
+}
+```
+
+> Uso **interfacce** e **dependency injection** per <span style="color: #8392a4">ridurre l’accoppiamento e facilitare il testing</span>.
+
+## Riassunto rapido
+
+|Principio|Significato|Beneficio|
+|---|---|---|
+|**S** – Single Responsibility|Una classe = una responsabilità|Manutenibilità|
+|**O** – Open/Closed|Estendi senza modificare|Flessibilità|
+|**L** – Liskov Substitution|Le sottoclassi rispettano la base|Correttezza|
+|**I** – Interface Segregation|Interfacce piccole e specifiche|Semplicità|
+|**D** – Dependency Inversion|Dipendi da astrazioni|Testabilità|
+
+> I principi SOLID guidano la progettazione orientata agli oggetti:
+> mantengono il codice modulare, scalabile e testabile.
+> In .NET li applico con interfacce, iniezione delle dipendenze, separazione dei layer e attenzione alla singola responsabilità delle classi.”
+

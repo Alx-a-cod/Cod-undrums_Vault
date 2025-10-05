@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2- .NET and advanced .NET/1.a Incapsulamento (Encapsulation).md",
+                "file": "2- .NET and advanced .NET/07 - DDD, Domain Driven Design.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1.a Incapsulamento (Encapsulation)"
+              "title": "07 - DDD, Domain Driven Design"
             }
           }
         ],
@@ -213,6 +213,7 @@
   "active": "94ce1f1cd2513d0c",
   "lastOpenFiles": [
     "2- .NET and advanced .NET/0 - Linguaggio Csharp.md",
+    "2- .NET and advanced .NET/1.a Incapsulamento (Encapsulation).md",
     "2- .NET and advanced .NET/05 - EF Core.md",
     "2- .NET and advanced .NET/06 - Containerizzazione (Docker & Kubernetes).md",
     "2- .NET and advanced .NET/07 - DDD, Domain Driven Design.md",
@@ -226,7 +227,6 @@
     "2- .NET and advanced .NET/1.d Astrazione.md",
     "2- .NET and advanced .NET/1.c Polimorfismo.md",
     "2- .NET and advanced .NET/1.b Ereditarietà.md",
-    "2- .NET and advanced .NET/1.a Incapsulamento (Encapsulation).md",
     "2- .NET and advanced .NET/04 - LinQ.md",
     "2- .NET and advanced .NET/03 - SQL & Database.md",
     "1- Snippets/DoSQL - Nodo Problema, retQ come indicatore di successo.md",
