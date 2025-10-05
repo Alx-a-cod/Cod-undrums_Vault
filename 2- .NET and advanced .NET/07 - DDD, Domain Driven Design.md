@@ -1,3 +1,8 @@
+---
+tags:
+  - programming_language
+  - Data
+---
 
 # Domain Driven Design (DDD)
 

@@ -1,3 +1,8 @@
+---
+tags:
+  - NET
+  - Versioning
+---
 
 ### Containerizzazione – Docker & Kubernetes
 
