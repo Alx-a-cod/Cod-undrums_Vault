@@ -260,7 +260,6 @@ Questo approccio aumenta la **modularità**, favorisce la **testabilità** e ren
 # Architettura a Microservizi – Guida per Colloquio (livello .NET junior)
 
 ---
-
 ## Cos’è un microservizio
 Un **microservizio** è un **piccolo modulo indipendente** di un’applicazione che:
 - realizza **una singola funzionalità di business** (es. “Gestione Ordini”),

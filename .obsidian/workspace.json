@@ -25,14 +25,14 @@
             "id": "94ce1f1cd2513d0c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "split-diff-view",
               "state": {
-                "file": "2- .NET and advanced .NET/07 - DDD, Domain Driven Design.md",
-                "mode": "source",
-                "source": false
+                "aFile": "2- .NET and advanced .NET/02 - Tipi di Architetture in NET.md",
+                "bFile": "2- .NET and advanced .NET/02 - Tipi di Architetture in NET.md",
+                "aRef": ""
               },
-              "icon": "lucide-file",
-              "title": "07 - DDD, Domain Driven Design"
+              "icon": "diff",
+              "title": "Diff: 02 - Tipi di Architetture in NET"
             }
           }
         ],
@@ -212,23 +212,23 @@
   },
   "active": "94ce1f1cd2513d0c",
   "lastOpenFiles": [
-    "2- .NET and advanced .NET/0 - Linguaggio Csharp.md",
-    "2- .NET and advanced .NET/1.a Incapsulamento (Encapsulation).md",
-    "2- .NET and advanced .NET/05 - EF Core.md",
-    "2- .NET and advanced .NET/06 - Containerizzazione (Docker & Kubernetes).md",
     "2- .NET and advanced .NET/07 - DDD, Domain Driven Design.md",
-    "2- .NET and advanced .NET/00 - Index.md",
+    "2- .NET and advanced .NET/06 - Containerizzazione (Docker & Kubernetes).md",
     "2- .NET and advanced .NET/Azure DP900 - Azure Data Fundamentals.md",
+    "2- .NET and advanced .NET/05 - EF Core.md",
+    "2- .NET and advanced .NET/04 - LinQ.md",
+    "2- .NET and advanced .NET/03 - SQL & Database.md",
     "2- .NET and advanced .NET/02 - Tipi di Architetture in NET.md",
-    "2- .NET and advanced .NET/1.e Modificatori di accesso in Csharp.md",
-    "2- .NET and advanced .NET/01 - Programmazione orientata agli oggetti (OOP).md",
     "2- .NET and advanced .NET/1.g Tipi Valore vs Tipi Riferimento.md",
     "2- .NET and advanced .NET/1.f Heap, Stack e Value vs Reference Type in C.md",
+    "2- .NET and advanced .NET/1.e Modificatori di accesso in Csharp.md",
+    "2- .NET and advanced .NET/1.a Incapsulamento (Encapsulation).md",
+    "2- .NET and advanced .NET/0 - Linguaggio Csharp.md",
+    "2- .NET and advanced .NET/00 - Index.md",
+    "2- .NET and advanced .NET/01 - Programmazione orientata agli oggetti (OOP).md",
     "2- .NET and advanced .NET/1.d Astrazione.md",
     "2- .NET and advanced .NET/1.c Polimorfismo.md",
     "2- .NET and advanced .NET/1.b Ereditarietà.md",
-    "2- .NET and advanced .NET/04 - LinQ.md",
-    "2- .NET and advanced .NET/03 - SQL & Database.md",
     "1- Snippets/DoSQL - Nodo Problema, retQ come indicatore di successo.md",
     "2- .NET and advanced .NET/02 - Framework di sviluppo.md",
     "toc.md",

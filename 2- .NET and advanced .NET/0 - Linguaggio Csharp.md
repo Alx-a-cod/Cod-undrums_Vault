@@ -2272,7 +2272,7 @@ Sono cinque regole fondamentali proposte da Robert C. Martin (“Uncle Bob”).
 ---
 ## Single Responsibility Principle (SRP)
 
-> “Una classe dovrebbe avere una sola ragione per cambiare.”
+> Una classe dovrebbe avere una sola ragione per cambiare.
 
 Ogni classe o modulo deve avere **una singola responsabilità**, cioè un unico scopo o motivo di modifica.
 
