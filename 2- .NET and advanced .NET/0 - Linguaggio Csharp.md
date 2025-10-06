@@ -1968,7 +1968,6 @@ Content-Type: application/json
 > - **HTTP/3** → basato su QUIC/UDP, elimina i limiti del TCP, è più veloce e stabile su reti moderne (perfetto per mobile e real-time).
 ## SOAP vs API vs REST
 
---- 
 ### 1. API (Application Programming Interface)
 
 - In generale, **API = insieme di regole e metodi** che permettono a due applicazioni di comunicare.
@@ -2439,4 +2438,6 @@ public class ReportService
 > I principi SOLID guidano la progettazione orientata agli oggetti:
 > mantengono il codice modulare, scalabile e testabile.
 > In .NET li applico con interfacce, iniezione delle dipendenze, separazione dei layer e attenzione alla singola responsabilità delle classi.”
+
+
 

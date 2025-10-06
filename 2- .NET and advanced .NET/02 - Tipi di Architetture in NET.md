@@ -3,7 +3,6 @@ tags:
   - NET
 ---
 
-
 # Differenze tra .NET Framework e .NET Core
 
 ---
@@ -257,7 +256,7 @@ Questo approccio aumenta la **modularità**, favorisce la **testabilità** e ren
 >TempData serve a mantenere dati temporanei tra due richieste consecutive. Lo uso spesso per passare messaggi di stato o notifiche dopo un redirect. Diverso da ViewBag (solo per la stessa richiesta) e Session (persistente fino alla chiusura).
 
 
-# Architettura a Microservizi – Guida per Colloquio (livello .NET junior)
+# Architettura a Microservizi
 
 ---
 ## Cos’è un microservizio
@@ -403,8 +402,6 @@ kubectl apply -f order-deployment.yaml
 
 → Servizi indipendenti, coordinati da eventi, con coerenza eventuale.
 
-💬 Domande tipiche in colloquio
-
 |Domanda|Risposta sintetica ideale|
 |---|---|
 |Cos’è un microservizio?|Piccola app autonoma che realizza una funzionalità e comunica con le altre via API o eventi.|
@@ -426,3 +423,176 @@ Un sistema a microservizi è come un insieme di API autonome, ciascuna:
 
 > Nel monolite hai un’app grande e unica. Nei microservizi hai tante piccole app che collaborano in rete.
 
+
+# Blazor Pages, OCP e DIP – Spiegazione
+
+## Cos’è **Blazor** e cosa sono le **Blazor Pages**
+
+### Cos’è Blazor
+**Blazor** è un framework di Microsoft per creare **applicazioni web interattive** usando **C# al posto di JavaScript**.
+
+- Fa parte dello stack **ASP.NET Core**.
+- Permette di scrivere **componenti UI** riutilizzabili in C# e Razor.
+- È pensato per lo sviluppo **front-end moderno**, simile a React o Angular, ma completamente in .NET.
+
+---
+
+### Tipologie di Blazor
+| Tipo | Dove gira | Caratteristiche |
+|------|------------|----------------|
+| **Blazor Server** | Sul server (SignalR gestisce la comunicazione real-time con il browser) | + leggero, + rapido da caricare, ma richiede connessione costante |
+| **Blazor WebAssembly (WASM)** | Nel browser (codice .NET compilato in WebAssembly) | + indipendente dal server, + scalabile, ma più pesante al primo caricamento |
+| **Blazor Hybrid** | In app desktop/mobile (MAUI, Electron) | usa WebView ma scritta in C# |
+
+---
+
+### Cos’è una *Blazor Page* (o Razor Component)
+
+Una **Blazor Page** è un **componente UI con estensione `.razor`**.  
+Contiene markup HTML e logica C# nello stesso file.
+
+Esempio:
+```razor
+@page "/counter"
+
+<h3>Contatore</h3>
+
+<p>Valore: @count</p>
+<button class="btn btn-primary" @onclick="Increment">Aumenta</button>
+
+@code {
+    private int count = 0;
+    void Increment() => count++;
+}
+```
+
+>Le Blazor Pages sono **componenti Razor** che combinano **HTML** e **C#**, permettendo di costruire interfacce interattive senza JavaScript, 
+>sfruttando la potenza di ASP.NET Core.
+ 
+### OCP – Open/Closed Principle (principio aperto/chiuso)
+
+> Le classi devono essere **aperte all’estensione**, ma **chiuse alla modifica**.
+
+Significa che puoi aggiungere nuove funzionalità senza toccare il codice esistente.
+
+💡 Esempio pratico in .NET
+❌ Violazione OCP:
+```csharp
+
+public class DiscountCalculator
+{
+    public decimal Calculate(decimal price, string customerType)
+    {
+        if (customerType == "Regular") return price * 0.95m;
+        if (customerType == "Premium") return price * 0.90m;
+        return price;
+    }
+}
+```
+
+👉 Ogni volta che aggiungi un nuovo tipo di cliente, devi modificare la classe.
+
+✅ Corretto (OCP rispettato):
+``` csharp
+
+public interface IDiscountStrategy
+{
+    decimal ApplyDiscount(decimal price);
+}
+
+public class RegularCustomerDiscount : IDiscountStrategy
+{
+    public decimal ApplyDiscount(decimal price) => price * 0.95m;
+}
+
+public class PremiumCustomerDiscount : IDiscountStrategy
+{
+    public decimal ApplyDiscount(decimal price) => price * 0.90m;
+}
+
+public class DiscountCalculator
+{
+    public decimal Calculate(decimal price, IDiscountStrategy strategy)
+        => strategy.ApplyDiscount(price);
+}
+```
+
+👉 Ora puoi aggiungere nuovi sconti (nuove classi) senza modificare DiscountCalculator.
+
+> In .NET applico l’OCP usando **interfacce**, <span style="color: #8392a4">polimorfismo e dependency injection</span>, così posso estendere il comportamento senza toccare il codice già testato.
+
+### DIP – Dependency Inversion Principle
+
+> Le **classi devono dipendere da astrazioni**, non da implementazioni concrete.
+
+In pratica:
+- non creare istanze direttamente con *new*,
+- usa interfacce e Dependency Injection (DI) per gestire le dipendenze.
+
+Esempio pratico in .NET
+
+❌ Senza DIP:
+```csharp
+public class OrderService
+{
+    private readonly EmailSender _emailSender = new EmailSender();
+
+    public void CreateOrder(Order order)
+    {
+        // salva ordine
+        _emailSender.Send(order.CustomerEmail, "Ordine creato");
+    }
+}
+```
+
+👉 OrderService è accoppiato all’implementazione EmailSender.
+
+### Con DIP (usando interfacce e DI):
+```csharp
+public interface IEmailSender
+{
+    void Send(string to, string message);
+}
+
+public class EmailSender : IEmailSender
+{
+    public void Send(string to, string message) { /* invio email */ }
+}
+
+public class OrderService
+{
+    private readonly IEmailSender _emailSender;
+
+    public OrderService(IEmailSender emailSender)
+    {
+        _emailSender = emailSender;
+    }
+
+    public void CreateOrder(Order order)
+    {
+        // salva ordine
+        _emailSender.Send(order.CustomerEmail, "Ordine creato");
+    }
+}
+```
+
+In ASP.NET Core, la DI è integrata nel framework:
+
+```csharp
+// Program.cs
+builder.Services.AddScoped<IEmailSender, EmailSender>();
+```
+
+>Uso la Dependency Injection per rispettare il DIP: le classi dipendono da interfacce, non da implementazioni. Questo rende il codice più testabile e flessibile.
+
+### Riassunto rapido
+
+| Concetto         | Descrizione                                                                                | Esempio                               |
+| ---------------- | ------------------------------------------------------------------------------------------ | ------------------------------------- |
+| **Blazor Pages** | Componenti Razor scritti in C#, che gestiscono UI web reattiva (client-side o server-side) | `@page "/counter"` con logica `@code` |
+| **OCP**          | Codice estendibile senza modificarlo                                                       | Strategie di sconto, polimorfismo     |
+| **DIP**          | Le classi dipendono da interfacce (astrazioni)                                             | Dependency Injection in ASP.NET Core  |
+|                  |                                                                                            |                                       |
+
+> In .NET applico l’**OCP** *creando componenti estendibili basati su interfacce*, e il **DIP** usando *dependency injection* per <span style="color: #8392a4">disaccoppiare le classi</span>. 
+> ==Con Blazor posso anche costruire il front-end in C#, sfruttando la stessa logica e i principi SOLID==.
