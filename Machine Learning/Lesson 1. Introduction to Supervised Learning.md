@@ -54,7 +54,7 @@ It outlines <span style="color: #e5a216">key challenges</span> in <span style="c
 >  Example: A point in 2D is $(x1,x2)∈R2(x_1, x_2) \in \mathbb{R}^2(x1​,x2​)∈R2$. 
 >  A point in 3D is $(x1,x2,x3)∈R3(x_1, x_2, x_3) \in \mathbb{R}^3(x1​,x2​,x3​)∈R3$, and so on.
 >  
-> When we say that inputs are "embedded in Rd\mathbb{R}^dRd", we mean:
+> When we say that inputs are "embedded in Rd ${R}^d$", we mean:
     > Each **input** (like an image, a sentence, or a DNA sequence) is **converted into a vector** of real numbers of length $d$.
     > 
 >    So the machine learning algorithm doesn’t work with "raw images" or "sentences" — it works with very high-dimensional **vectors of numbers** often with **millions (10⁶) or even billions (10⁹)** of dimensions, which presents both **computational and statistical challenges**.
@@ -92,7 +92,7 @@ So, machine learning methods must:
 				 ![[Pasted image 20250928150018.png]]
 - [ ] **High-dimensional input space**: Known as the <span style="color: #8392a4">curse of dimensionality</span>, causing both computational (scalability) + generalization and statistical issues (generalization of unseen data).
 - [ ] **Distribution mismatch**: Training and testing data may come from different distributions. That is, real-world data often differ between training and deployment.
-- [ ] **Unclear performance criteria**: Evaluation metrics may vary across applications.
+- [ ] **Unclear performance criteria**: The metric for “good performance” (loss or accuracy) is not always well-defined or unique. Evaluation metrics may vary across applications.
 
 ---
 ## Formalization (Probabilistic Framework)
