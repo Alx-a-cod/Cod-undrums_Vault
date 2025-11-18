@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Machine Learning/Lesson 2. Decision Theory & Loss Function.md",
+                "file": "Machine Learning/Assignment I - Comparative Analysis 1 (condensed).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lesson 2. Decision Theory & Loss Function"
+              "title": "Assignment I - Comparative Analysis 1 (condensed)"
             }
           }
         ]
@@ -179,7 +179,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 354
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -194,18 +194,31 @@
       "iconic:Open rulebook": false
     }
   },
-  "active": "cc3f7a735aaecb7e",
+  "active": "52ad3ab9e979e1e8",
   "lastOpenFiles": [
-    "Machine Learning/Lesson 2. Decision Theory & Loss Function.md",
-    "Untitled.canvas",
-    "2025-10-31.md",
+    "Machine Learning/Assignment I - Comparative Analysis.md",
+    "Machine Learning/Assignment I - Comparative Analysis 1 (condensed).md",
+    "Assignment I - Comparative Analysis.pdf",
+    "Pasted image 20251118193806.png",
+    "Pasted image 20251118193038.png",
+    "Pasted image 20251118191634.png",
+    "Pasted image 20251118191623.png",
+    "Pasted image 20251118191616.png",
+    "Pasted image 20251118191436.png",
+    "Machine Learning/Lesson 2. Best Predictor - bayes predictor & naive bayes prediction.md",
     "Machine Learning/Lesson 1. Introduction to Supervised Learning.md",
+    "Obsidian Tips/Titoli.md",
+    "Obsidian Tips/How to use Obsidian.md",
     "Pasted image 20250928150018.png.md",
+    "Untitled.canvas",
+    "Untitled.base",
+    "2- .NET and advanced .NET/05 - EF Core.md",
+    "2025-10-31.md",
+    "Machine Learning/Lesson 2. Decision Theory & Loss Function.md",
+    "2- .NET and advanced .NET/0 - Linguaggio Csharp.md",
     "Obsidian Tips/Callout.md",
     "0 - Problems/WIP_MetodoDelegati(ignore).md",
-    "Untitled.base",
     "README.md",
-    "2- .NET and advanced .NET/0 - Linguaggio Csharp.md",
     "2025-10-28.md",
     "Untitled 2.base",
     "Untitled 1.base",
@@ -213,19 +226,12 @@
     "2- .NET and advanced .NET/07 - DDD, Domain Driven Design.md",
     "2- .NET and advanced .NET/06 - Containerizzazione (Docker & Kubernetes).md",
     "2- .NET and advanced .NET/Azure DP900 - Azure Data Fundamentals.md",
-    "2- .NET and advanced .NET/05 - EF Core.md",
     "2- .NET and advanced .NET/04 - LinQ.md",
     "2- .NET and advanced .NET/03 - SQL & Database.md",
     "2- .NET and advanced .NET/1.g Tipi Valore vs Tipi Riferimento.md",
     "2- .NET and advanced .NET/1.f Heap, Stack e Value vs Reference Type in C.md",
     "2- .NET and advanced .NET/1.e Modificatori di accesso in Csharp.md",
     "2- .NET and advanced .NET/1.a Incapsulamento (Encapsulation).md",
-    "2- .NET and advanced .NET/00 - Index.md",
-    "2- .NET and advanced .NET/01 - Programmazione orientata agli oggetti (OOP).md",
-    "2- .NET and advanced .NET/1.d Astrazione.md",
-    "2- .NET and advanced .NET/1.c Polimorfismo.md",
-    "2- .NET and advanced .NET/1.b Ereditarietà.md",
-    "1- Snippets/DoSQL - Nodo Problema, retQ come indicatore di successo.md",
     "2- .NET and advanced .NET",
     "Pasted image 20250928150018.png",
     "Pasted image 20250928145854.png",
